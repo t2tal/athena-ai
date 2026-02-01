@@ -1,0 +1,155 @@
+---
+// src/pages/index.astro
+import MainLayout from '../layouts/MainLayout.astro';
+---
+
+<MainLayout title="Study Buddy | Welcome">
+    <div class="landing-container">
+        
+        <div class="content">
+            <span class="badge">Student Innovation Project</span>
+            
+            <h1>Study Buddy <span class="accent">✎</span></h1>
+            
+            <p class="subtitle">
+                An interactive, voice-powered companion designed to make 
+                late-night study sessions feel a little less lonely.
+                Powered by <span class="highlight">Python</span>, <span class="highlight">AI</span>, and <span class="highlight">Generative Art</span>.
+            </p>
+            
+            <div class="button-group">
+                <a href="/app" class="enter-btn">
+                    Enter Study Room <span class="arrow">→</span>
+                </a>
+                <a href="/demo" class="secondary-btn">Watch Demo</a>
+            </div>
+        </div>
+        
+        <div class="blob"></div>
+ 
+    </div>
+</MainLayout>
+
+<style>
+    /* --- THEME VARIABLES (Matched to Demo Page) --- */
+    :root {
+        --bg-color: #0d0d12;
+        --text-color: #e0e0e0;
+        --accent-color: #8b5cf6; /* Violet */
+        --accent-glow: rgba(139, 92, 246, 0.3);
+    }
+
+    .landing-container {
+        height: 90vh; 
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+        background-color: var(--bg-color); /* Ensures dark bg */
+        color: var(--text-color);
+        font-family: system-ui, -apple-system, sans-serif;
+    }
+
+    .content {
+        z-index: 2;
+        max-width: 700px;
+        padding: 20px;
+    }
+
+    /* MATCHED BADGE STYLE */
+    .badge {
+        background: rgba(139, 92, 246, 0.1);
+        color: var(--accent-color);
+        padding: 0.5rem 1rem;
+        border-radius: 99px;
+        font-size: 0.85rem;
+        font-weight: 700;
+        letter-spacing: 1px;
+        border: 1px solid rgba(139, 92, 246, 0.3);
+        text-transform: uppercase;
+        margin-bottom: 1.5rem;
+        display: inline-block;
+    }
+
+    /* MATCHED TYPOGRAPHY */
+    h1 {
+        font-size: 4.5rem;
+        margin: 1.5rem 0;
+        font-weight: 800; /* Bold like demo */
+        letter-spacing: -2px;
+        line-height: 1.1;
+    }
+
+    .accent {
+        color: var(--accent-color);
+    }
+
+    .subtitle {
+        font-size: 1.25rem;
+        line-height: 1.6;
+        color: #aaa; /* Softer grey like demo */
+        margin-bottom: 3rem;
+        font-weight: 400;
+    }
+
+    .highlight {
+        color: #fff;
+        font-weight: 500;
+    }
+
+    /* BUTTONS */
+    .button-group {
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .enter-btn {
+        display: inline-block;
+        text-decoration: none;
+        background: var(--accent-color);
+        color: white;
+        padding: 1rem 2rem;
+        border-radius: 8px; /* Slightly squarer like tech UIs */
+        font-size: 1.1rem;
+        font-weight: 600;
+        transition: all 0.2s ease;
+        box-shadow: 0 4px 20px var(--accent-glow);
+    }
+
+    .enter-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 30px var(--accent-glow);
+        background: #7c3aed; /* Slightly darker violet */
+    }
+
+    .secondary-btn {
+        text-decoration: none;
+        color: #888;
+        font-weight: 500;
+        padding: 1rem 1.5rem;
+        transition: color 0.2s;
+    }
+
+    .secondary-btn:hover {
+        color: white;
+    }
+
+    .arrow { margin-left: 8px; }
+
+    /* VIOLET BACKGROUND GLOW */
+    .blob {
+        position: absolute;
+        width: 800px;
+        height: 800px;
+        background: radial-gradient(circle, rgba(139, 92, 246, 0.15) 0%, rgba(13, 13, 18, 0) 70%);
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 1;
+        pointer-events: none;
+    }
+</style>
